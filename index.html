@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟表</title>
+    <style>
+        .wapper{
+            width: 512px;
+            height:512px;
+            background-image: url(./clock.png);
+            position: relative;
+        }
+     
+        .minute{
+            width:32px ;
+            height: 218px;
+            background-image: url(./minute.png);
+            position: absolute;
+            top: 240px;
+            left: 240px;
+            transform: rotateZ(180deg);
+            transform-origin:16px 16px;
+            animation: minterun 3600s steps(60, end) infinite;
+        }
+        .second{
+            width: 16px;
+            height: 278px;
+            background-image: url(./second.png);
+            transform-origin:8px 76px;
+            position: absolute;
+            top: 180px;
+            left: 249px;
+            transform: rotateZ(180deg);
+            animation: secondrun 60s steps(60, end) infinite;
+        }
+        .hours{
+            position: absolute;
+            left: 240px;
+            top: 240px;
+            height: 148px;
+            width: 32px;
+            background-image: url(./hour.png);
+        }
+        @keyframes secondrun{
+            0%{
+                transform:  rotateZ(180deg);
+            }
+           100%{
+                transform: rotateZ(540deg) ;
+            }
+          
+        }
+        @keyframes minterun{
+            0%{
+                transform:  rotateZ(180deg);
+            }
+           100%{
+                transform: rotateZ(540deg) ;
+            }
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="wapper">
+       
+        <div class="minute"></div>
+        <div class="second"></div>
+        <div class="hours"></div>
+    </div>
+</body>
+</html>
